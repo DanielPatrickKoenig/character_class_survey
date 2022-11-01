@@ -1,0 +1,240 @@
+[
+    {
+        "bone": "thighR",
+        "axis": "x",
+        "sequence": [
+            {
+                "value": 185,
+                "time": 0.5
+            },
+            {
+                "value": 155,
+                "time": 0.5
+            }
+        ],
+        "states": [
+            "moving",
+            "carying"
+        ]
+    },
+    {
+        "bone": "thighL",
+        "axis": "x",
+        "sequence": [
+            {
+                "value": 155,
+                "time": 0.5
+            },
+            {
+                "value": 185,
+                "time": 0.5
+            }
+        ],
+        "states": [
+            "moving",
+            "carying"
+        ]
+    },
+    {
+        "bone": "thighR",
+        "axis": "x",
+        "sequence": [
+            {
+                "value": 170,
+                "time": 0.5
+            }
+        ],
+        "states": [
+            "idle",
+            "holding"
+        ]
+    },
+    {
+        "bone": "thighL",
+        "axis": "x",
+        "sequence": [
+            {
+                "value": 170,
+                "time": 0.5
+            }
+        ],
+        "states": [
+            "idle",
+            "holding"
+        ]
+    },
+    {
+        "bone": "shinR",
+        "axis": "x",
+        "sequence": [
+            {
+                "value": 30,
+                "time": 0.25
+            },
+            {
+                "value": 0,
+                "time": 0.25
+            },
+            {
+                "value": 0,
+                "time": 0.25
+            },
+            {
+                "value": 30,
+                "time": 0.25
+            }
+        ],
+        "states": [
+            "moving",
+            "carying"
+        ]
+    },
+    {
+        "bone": "shinL",
+        "axis": "x",
+        "sequence": [
+            {
+                "value": 0,
+                "time": 0.25
+            },
+            {
+                "value": 30,
+                "time": 0.25
+            },
+            {
+                "value": 30,
+                "time": 0.25
+            },
+            {
+                "value": 0,
+                "time": 0.25
+            }
+        ],
+        "states": [
+            "moving",
+            "carying"
+        ]
+    },
+    {
+        "bone": "shinR",
+        "axis": "x",
+        "sequence": [
+            {
+                "value": 0,
+                "time": 0.5
+            }
+        ],
+        "states": [
+            "idle",
+            "holding"
+        ]
+    },
+    {
+        "bone": "shinL",
+        "axis": "x",
+        "sequence": [
+            {
+                "value": 0,
+                "time": 0.5
+            }
+        ],
+        "states": [
+            "idle",
+            "holding"
+        ]
+    },
+    {
+        "bone": "shoulderR",
+        "axis": "x",
+        "sequence": [
+            {
+                "value": -70,
+                "time": 0.5
+            },
+            {
+                "value": -50,
+                "time": 0.5
+            }
+        ],
+        "states": [
+            "moving",
+            "carying"
+        ]
+    },
+    {
+        "bone": "shoulderL",
+        "axis": "x",
+        "sequence": [
+            {
+                "value": -50,
+                "time": 0.5
+            },
+            {
+                "value": -70,
+                "time": 0.5
+            }
+        ],
+        "states": [
+            "moving",
+            "carying"
+        ]
+    },
+    {
+        "bone": "shoulderR",
+        "axis": "x",
+        "sequence": [
+            {
+                "value": -60,
+                "time": 0.5
+            }
+        ],
+        "states": [
+            "idle",
+            "holding"
+        ]
+    },
+    {
+        "bone": "shoulderL",
+        "axis": "x",
+        "sequence": [
+            {
+                "value": -60,
+                "time": 0.5
+            }
+        ],
+        "states": [
+            "idle",
+            "holding"
+        ]
+    },
+    {
+        "bone": "upper_armR",
+        "axis": "x",
+        "sequence": [
+            {
+                "value": 12,
+                "time": 0.5
+            }
+        ],
+        "states": [
+            "moving",
+            "idle",
+            "holding"
+        ]
+    },
+    {
+        "bone": "upper_armL",
+        "axis": "x",
+        "sequence": [
+            {
+                "value": 12,
+                "time": 0.5
+            }
+        ],
+        "states": [
+            "moving",
+            "idle",
+            "holding"
+        ]
+    }
+]

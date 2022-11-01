@@ -8,15 +8,13 @@ export default class SurveyTakerController extends PlayerController{
     modelLoaded(model){
         super.modelLoaded(model);
         model.scale.z = model.scale.z * -1;
-        const bones = object3DSelector(model, { type: 'Bone' });
-        console.log(bones);
-        console.log(bones.map(item => item.name));
 
-        this.rigManager.cycle('thighR', 'x', [{value:195, time:.5}, {value:165, time:.5}], ['moving', 'carying']);
-        this.rigManager.cycle('thighL', 'x', [{value:165, time:.5}, {value:195, time:.5}], ['moving', 'carying']);
+        const walkCycle = require('../../data/walk_cycle.json');
 
-        this.rigManager.cycle('thighR', 'x', [{value:180, time:.5}], ['idle', 'holding']);
-        this.rigManager.cycle('thighL', 'x', [{value:180, time:.5}], ['idle', 'holding']);
+        this.rigManager.currentState = 'idle';
 
+        walkCycle.forEach(item => {
+            this.rigManager.cycle(item.bone, item.axis, item.sequence, item.states);
+        });
     }
 }
