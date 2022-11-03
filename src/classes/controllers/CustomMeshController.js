@@ -16,6 +16,9 @@ export default class CustomMeshController extends LocatableController{
         if(this.onLoaded){
             this.onLoaded(model);
         }
+        model.position.x = this.startPosition.x;
+        model.position.y = this.startPosition.y;
+        model.position.z = this.startPosition.z;
     }
     modelLoaded(model){
         this.model = model;
