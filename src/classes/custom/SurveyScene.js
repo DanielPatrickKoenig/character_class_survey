@@ -17,11 +17,10 @@ export default class SurveyScene extends BaseScene{
         const lc = new LightController({ environment: this.environment });
         lc.addLight({ type: LightTypes.DIRECTIONAL, intensity: 4, target: { x: 0, y: -10, z: 5 } });
 
-        this.environment.camera.position.x = -20;
-        this.environment.camera.position.z = -10;
+        this.environment.camera.position.y = 10;
+        this.environment.camera.rotation.x = degreesToRadians(-20);
 
-        this.environment.camera.rotation.y = degreesToRadians(-45);
-
+        
         new GroundController({environment: this.environment}, 'https://danielpatrickkoenig.github.io/spirit-of-kovak/dist/dirt_row.png');
 
         const surveyTaker = new SurveyTakerController({ environment: this.environment }, {x: 0, y: 3, z: -6});
@@ -38,6 +37,7 @@ export default class SurveyScene extends BaseScene{
         navigationPath
             .filter(item => item.checkpoint !== undefined)
             .map(item => new CheckpointController({environment: this.environment}, {x: item.x, y: item.y, z: item.z}, surveyTaker, () => this.onCheckpoint(item.checkpoint)));
+
     }
 
     getWidth(){

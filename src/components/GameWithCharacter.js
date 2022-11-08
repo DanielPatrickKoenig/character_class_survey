@@ -61,6 +61,7 @@ const GameWithCharacter = () => {
             scene.getPlayerControllers().forEach(item => item.directionChange(e.direction));
         }
         else{
+            console.log(e);
             scene.getPlayerControllers().forEach(item => item.povChange(e.position));
         }
         
