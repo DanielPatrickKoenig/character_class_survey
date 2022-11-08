@@ -1,5 +1,6 @@
 import PlayerControl from './PlayerControl';
 import UserInterface from './ui/UserInterface';
+import {POVModes} from '../classes/POVManager';
 import { createRef } from 'react';
 import { createScene } from '../engine';
 import './GameWithCharacter.css';
@@ -48,7 +49,7 @@ const GameWithCharacter = () => {
         scene.carController.turn(0);
     }
     const pointerStarted = (e) => {
-        if(e.mobile){
+        if(e.mobile && ![POVModes.ISOMETRIC, POVModes.ISOPERSPECTIVE].includes(scene.environment.povMode)){
             scene.getPlayerControllers().forEach(item => item.move(speed * -1));
         }
         else{
@@ -56,7 +57,7 @@ const GameWithCharacter = () => {
         }
     }
     const pointerChanged = (e) => {
-        if(e.mobile){
+        if(e.mobile && ![POVModes.ISOMETRIC, POVModes.ISOPERSPECTIVE].includes(scene.environment.povMode)){
             scene.getPlayerControllers().forEach(item => item.directionChange(e.direction));
         }
         else{
@@ -65,7 +66,7 @@ const GameWithCharacter = () => {
         
     }
     const pointerStopped = (e) => {
-        if(e.mobile){
+        if(e.mobile && ![POVModes.ISOMETRIC, POVModes.ISOPERSPECTIVE].includes(scene.environment.povMode)){
             scene.getPlayerControllers().forEach(item => item.moveStop());
         }
         
