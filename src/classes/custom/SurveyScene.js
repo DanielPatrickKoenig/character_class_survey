@@ -27,7 +27,7 @@ export default class SurveyScene extends BaseScene{
         const surveyTaker = new SurveyTakerController({ environment: this.environment }, {x: 0, y: 3, z: -6});
 
         const models = require('../../data/models.json');
-        this.models = models.map(item => new ScalableCustomMeshController({ environment: this.environment }, item.model, item.position, item.scale));
+        this.models = models.map(item => new ScalableCustomMeshController({ environment: this.environment }, item.model, item.position, item.scale, item.color));
 
         const navigationPath = require('../../data/autonavigation_path');
         this.autoNavigation = new AutoNavigationController({environment: this.environment}, navigationPath, surveyTaker);
