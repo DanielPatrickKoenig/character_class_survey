@@ -1,0 +1,29 @@
+[
+    {
+        "model": "https://danielpatrickkoenig.github.io/shared-app-resources/tree1.glb",
+        "position": {
+            "x": -10,
+            "y": 0,
+            "z": 15
+        },
+        "scale": {
+            "x": 3,
+            "y": 3,
+            "z": 3
+        }
+    },
+    {
+        "model": "https://danielpatrickkoenig.github.io/shared-app-resources/house1.glb",
+        "position": {
+            "x": 15,
+            "y": -4.3,
+            "z": 20
+        },
+        "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+        }
+    }
+    
+]

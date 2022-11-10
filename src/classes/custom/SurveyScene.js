@@ -4,14 +4,15 @@ import LightController, { LightTypes } from '../../classes/controllers/LightCont
 import GroundController from '../../classes/controllers/GroundController';
 import AutoNavigationController from '../../classes/controllers/AutoNavigationController';
 import SurveyTakerController from "./SurveyTakerController";
-import HouseController from "./HouseController";
-import TreeController from "./TreeController";
+// import HouseController from "./HouseController";
+import ScalableCustomMeshController from "./ScalableCustomMeshController";
 import CheckpointController from '../controllers/CheckpointController';
 import { degreesToRadians } from "../../utils/Utilities";
 export default class SurveyScene extends BaseScene{
     constructor(el){
         super(el);
         this.autoNavigation = null;
+        this.models = null;
     }
     initialize(){
         const lc = new LightController({ environment: this.environment });
@@ -25,11 +26,8 @@ export default class SurveyScene extends BaseScene{
 
         const surveyTaker = new SurveyTakerController({ environment: this.environment }, {x: 0, y: 3, z: -6});
 
-        new HouseController({environment: this.environment}, 1,  {x: 12, y: -4.3, z: 20});
-        new HouseController({environment: this.environment}, 2,  {x: -12, y: -4.3, z: 20});
-
-        new TreeController({environment: this.environment}, 2,  {x: -10, y: 0, z: 10});
-        new TreeController({environment: this.environment}, 5,  {x: 8, y: 0, z: 13});
+        const models = require('../../data/models.json');
+        this.models = models.map(item => new ScalableCustomMeshController({ environment: this.environment }, item.model, item.position, item.scale));
 
         const navigationPath = require('../../data/autonavigation_path');
         this.autoNavigation = new AutoNavigationController({environment: this.environment}, navigationPath, surveyTaker);
