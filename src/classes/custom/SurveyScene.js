@@ -33,7 +33,7 @@ export default class SurveyScene extends BaseScene{
         console.log(primatives);
         console.log(Object.values(ShapeTypes));
         this.models = models.map(item => new ScalableCustomMeshController({ environment: this.environment }, item.model, item.position, item.scale, item.color));
-        this.primatives = primatives.map(item => new PrimativeMeshController({ environment: this.environment }, item.type, item.position, item.size, item.color));
+        this.primatives = primatives.map(item => new PrimativeMeshController({ environment: this.environment }, item.type, item.position, item.size, item.color, item.mass, item.mesh));
 
         const navigationPath = require('../../data/autonavigation_path');
         this.autoNavigation = new AutoNavigationController({environment: this.environment}, navigationPath, surveyTaker);

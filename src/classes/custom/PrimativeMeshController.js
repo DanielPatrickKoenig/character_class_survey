@@ -3,21 +3,25 @@ import LocatableController from "../controllers/LocatableController";
 import CustomMeshController from "../controllers/CustomMeshController";
 
 export default class PrimativeMeshController extends LocatableController{
-    constructor(data, type, position, size, color, mass, model){
+    constructor(data, type, position, size, color, mass, mesh){
         super(data, position);
         this.mesh = null;
-        if(model){
-            const meshController = new CustomMeshController(data, model, position);
+        if(mesh){
+            const meshController = new CustomMeshController(data, mesh.model, position);
             meshController.onLoaded = (m) => {
-                this.modelLoaded(m, type, position, size, color, mass, model);
+                this.modelLoaded(m, type, position, size, color, mass, mesh);
             };
         }
         else{
-            createPrimitive({ type, size, position: this.startPosition, material: basicColorMaterial(color), scene: this.environment.scene, mass });
+            // console.log('mass of primative', mass);
+            this.mesh = createPrimitive({ type, size, position: this.startPosition, material: basicColorMaterial(color), scene: this.environment.scene, mass, physics: mass !== null && mass !== undefined ? this.physics : null });
         }
         
     }
-    modelLoaded(customMesh, type, position, size, color, mass){
-        createPrimitive({ type, size, position, material: basicColorMaterial(color), scene: this.environment.scene, mass, customMesh });
+    modelLoaded(customMesh, type, position, size, color, mass, mesh){
+        this.mesh = createPrimitive({ type, size, position, material: basicColorMaterial(color), scene: this.environment.scene, mass, customMesh, physics: mass !== null && mass !== undefined ? this.physics : null });
+        this.mesh.scale.x = mesh.scale.x;
+        this.mesh.scale.y = mesh.scale.y;
+        this.mesh.scale.z = mesh.scale.z;
     }
 }
