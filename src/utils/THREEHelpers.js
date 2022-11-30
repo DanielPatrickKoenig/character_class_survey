@@ -49,6 +49,9 @@ function object3DSelector(scope, filters) {
 function createPrimitive({ type, size, position, orientation, mass, physics, material, rotation, scene, customMesh }){
     let geometry;
     let mesh;
+    console.log(type);
+    console.log(size);
+    console.log(position);
     const shapeSize = size ? size : defaultDimensionValues().size;
     const shapePosition = position ? position : defaultDimensionValues().position;
     const shapeOrientation = orientation ? orientation : defaultDimensionValues().orientation;

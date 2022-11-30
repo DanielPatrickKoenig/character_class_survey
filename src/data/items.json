@@ -1,5 +1,7 @@
 [
     {
+        "id": "model-07997908804418778-08580900610031985-021098376861449641",
+        "type": "model",
         "model": "https://danielpatrickkoenig.github.io/shared-app-resources/tree1.glb",
         "position": {
             "x": -10,
@@ -13,6 +15,8 @@
         }
     },
     {
+        "id": "model-002941833910745828-0060277848931457045-07726579667747036",
+        "type": "model",
         "model": "https://danielpatrickkoenig.github.io/shared-app-resources/house1.glb",
         "position": {
             "x": 15,
@@ -25,6 +29,20 @@
             "z": 1
         },
         "color": "432616"
+    },
+    {
+        "id": "model-002941833910745828-0060277848931457045-07726579667747037",
+        "type": "box",
+        "position": {
+            "x": 10,
+            "y": 4.3,
+            "z": 10
+        },
+        "size": {
+            "x": 4,
+            "y": 8,
+            "z": 4
+        },
+        "color": "cc00cc"
     }
-    
 ]

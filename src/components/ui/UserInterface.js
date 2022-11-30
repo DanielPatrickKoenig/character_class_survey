@@ -1,7 +1,7 @@
 import { useState } from 'react'; 
 import Question from './Question';
 import './UserInterface.css';
-const UserInterface = ({scene, gameIndex}) => {
+const UserInterface = ({scene}) => {
     const [currentQuestion, setCurrentQuestion] = useState(-1);
     const processAction = (data, type) => {
         scene.autoNavigation.paused = true;
@@ -12,10 +12,7 @@ const UserInterface = ({scene, gameIndex}) => {
         scene.autoNavigation.paused = false;
         setCurrentQuestion(-1);
     }
-
     scene.setActionHandler(processAction);
-
-
         return (
         <div>
             {currentQuestion >= 0 ? <Question index={currentQuestion} onConfirm={confirmAnswer} /> : ''}

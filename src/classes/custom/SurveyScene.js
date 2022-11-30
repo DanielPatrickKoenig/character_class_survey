@@ -7,7 +7,8 @@ import SurveyTakerController from "./SurveyTakerController";
 // import HouseController from "./HouseController";
 import ScalableCustomMeshController from "./ScalableCustomMeshController";
 import CheckpointController from '../controllers/CheckpointController';
-import { degreesToRadians } from "../../utils/Utilities";
+import { ShapeTypes, degreesToRadians } from "../../utils/Utilities";
+import PrimativeMeshController from "./PrimativeMeshController";
 export default class SurveyScene extends BaseScene{
     constructor(el){
         super(el);
@@ -26,8 +27,13 @@ export default class SurveyScene extends BaseScene{
 
         const surveyTaker = new SurveyTakerController({ environment: this.environment }, {x: 0, y: 3, z: -6});
 
-        const models = require('../../data/models.json');
+        const items = require('../../data/items.json');
+        const models = items.filter(item => item.type === 'model');
+        const primatives = items.filter(item => Object.values(ShapeTypes).includes(item.type));
+        console.log(primatives);
+        console.log(Object.values(ShapeTypes));
         this.models = models.map(item => new ScalableCustomMeshController({ environment: this.environment }, item.model, item.position, item.scale, item.color));
+        this.primatives = primatives.map(item => new PrimativeMeshController({ environment: this.environment }, item.type, item.position, item.size, item.color));
 
         const navigationPath = require('../../data/autonavigation_path');
         this.autoNavigation = new AutoNavigationController({environment: this.environment}, navigationPath, surveyTaker);
