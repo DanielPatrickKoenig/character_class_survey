@@ -1,6 +1,6 @@
 import { basicColorMaterial, createPrimitive } from "../../utils/THREEHelpers";
-import LocatableController from "../controllers/LocatableController";
-import CustomMeshController from "../controllers/CustomMeshController";
+import LocatableController from "./LocatableController";
+import CustomMeshController from "./CustomMeshController";
 
 export default class PrimativeMeshController extends LocatableController{
     constructor(data, type, position, size, color, mass, mesh){

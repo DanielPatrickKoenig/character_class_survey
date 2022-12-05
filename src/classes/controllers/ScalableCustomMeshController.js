@@ -1,5 +1,5 @@
 import { basicColorMaterial, object3DSelector } from "../../utils/THREEHelpers";
-import CustomMeshController from "../controllers/CustomMeshController";
+import CustomMeshController from "./CustomMeshController";
 
 export default class ScalableCustomMeshController extends CustomMeshController{
     constructor(data, model, startPosition, scale, color){

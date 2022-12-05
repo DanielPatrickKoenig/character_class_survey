@@ -4,11 +4,9 @@ import LightController, { LightTypes } from '../../classes/controllers/LightCont
 import GroundController from '../../classes/controllers/GroundController';
 import AutoNavigationController from '../../classes/controllers/AutoNavigationController';
 import SurveyTakerController from "./SurveyTakerController";
-// import HouseController from "./HouseController";
-import ScalableCustomMeshController from "./ScalableCustomMeshController";
 import CheckpointController from '../controllers/CheckpointController';
-import { ShapeTypes, degreesToRadians } from "../../utils/Utilities";
-import PrimativeMeshController from "./PrimativeMeshController";
+import { degreesToRadians } from "../../utils/Utilities";
+import SettingController from "../controllers/SettingController";
 export default class SurveyScene extends BaseScene{
     constructor(el){
         super(el);
@@ -27,13 +25,7 @@ export default class SurveyScene extends BaseScene{
 
         const surveyTaker = new SurveyTakerController({ environment: this.environment }, {x: 0, y: 3, z: -6});
 
-        const items = require('../../data/items.json');
-        const models = items.filter(item => item.type === 'model');
-        const primatives = items.filter(item => Object.values(ShapeTypes).includes(item.type));
-        console.log(primatives);
-        console.log(Object.values(ShapeTypes));
-        this.models = models.map(item => new ScalableCustomMeshController({ environment: this.environment }, item.model, item.position, item.scale, item.color));
-        this.primatives = primatives.map(item => new PrimativeMeshController({ environment: this.environment }, item.type, item.position, item.size, item.color, item.mass, item.mesh));
+        this.createSetting();
 
         const navigationPath = require('../../data/autonavigation_path');
         this.autoNavigation = new AutoNavigationController({environment: this.environment}, navigationPath, surveyTaker);
@@ -55,5 +47,10 @@ export default class SurveyScene extends BaseScene{
     }
     onCheckpoint(index){
         this.emitActionHandler(index, 'checkpoint');
+    }
+
+    createSetting(){
+        const items = require('../../data/items.json');
+        new SettingController({ environment: this.environment }, items);
     }
 }
