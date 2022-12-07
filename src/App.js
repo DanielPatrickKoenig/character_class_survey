@@ -6,7 +6,7 @@ const modes = {
   EDIT: 'edit'
 };
 function App() {
-  const mode = modes.PLAY;
+  const mode = modes.EDIT;
   return (
     <div className="App">
       {mode === modes.PLAY ? <GameWithCharacter /> : <ContentManager />}
